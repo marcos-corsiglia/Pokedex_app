@@ -1,9 +1,13 @@
 package com.example.mypokedex
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recView: RecyclerView
@@ -15,9 +19,15 @@ class MainActivity : AppCompatActivity() {
         recView= findViewById(R.id.Rec_Poke)
         recView.layoutManager=LinearLayoutManager(this)
         val dataSet = getListadoPokemon()
-        adapter=Adapter()
-        adapter.submitList(dataSet)
+        adapter=Adapter(applicationContext)
         recView.adapter=adapter
+        adapter.submitList(dataSet)
+        adapter.onItemClickListener = {
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("name", it.name)
+            intent.putExtra("imagen", it.url)
+            startActivity(intent)
+        }
     }
 
     private fun getListadoPokemon(): MutableList<Pokemon>? {

@@ -4,13 +4,18 @@ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import java.lang.reflect.Type
 
-class Adapter() : ListAdapter<Pokemon, Adapter.ViewHolder>(DiffCallBack) {
+class Adapter(val context: Context) : ListAdapter<Pokemon, Adapter.ViewHolder>(DiffCallBack) {
+
+    lateinit var onItemClickListener: (Pokemon) -> Unit
 
     inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val nombreElem: TextView = view.findViewById(R.id.item_name)
@@ -26,6 +31,22 @@ class Adapter() : ListAdapter<Pokemon, Adapter.ViewHolder>(DiffCallBack) {
             strElem.text=poke.ataque.toString()
             defElem.text=poke.defensa.toString()
             hpElem.text=poke.vida.toString()
+
+            Glide.with(context).load(poke.url).into(imageElem)
+
+            val image = when(poke.tipo) {
+                PokemonType.AGUA -> R.drawable.agua
+                PokemonType.ELECTRICO -> R.drawable.electrico
+                PokemonType.PLANTA -> R.drawable.planta
+                PokemonType.FUEGO -> R.drawable.fuego
+                else -> R.drawable.fighter
+            }
+
+            typeElem.setImageResource(image)
+
+            view.setOnClickListener() {
+                onItemClickListener(poke)
+            }
         }
     }
 
