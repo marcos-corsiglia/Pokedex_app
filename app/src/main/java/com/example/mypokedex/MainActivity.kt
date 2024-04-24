@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             Pokemon(10,"Pikachu",35,55,40,90,PokemonType.ELECTRICO, "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fmetro.co.uk%2Fwp-content%2Fuploads%2F2016%2F06%2Fash_s_pikachu-0.png%3Fquality%3D90%26strip%3Dall%26zoom%3D1%26resize%3D899%252C580%26ssl%3D1&f=1&nofb=1"),
             Pokemon(11, "Raichu",60,90,110,110,PokemonType.ELECTRICO, "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fpokemon%2Fimages%2F4%2F4b%2FGoh_Raichu.png%2Frevision%2Flatest%3Fcb%3D20200906115835&f=1&nofb=1"),
             Pokemon(12, "Machop",70,67,76,54,PokemonType.LUCHA,"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vvI6hvzMDz5CYaYMbuG5vwHaFO%26pid%3DApi&f=1"),
-            Pokemon(13,"Hitmonlee",67,54,78,65,PokemonType.LUCHA, "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ftonsoffacts.com%2Fwp-content%2Fuploads%2F2019%2F12%2FBarry_Hitmonlee-1180x664.png&f=1&nofb=1"),
+            Pokemon(13,"Hitmonlee",67,54,78,65,PokemonType.LUCHA, "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ftonsoffacts.com%2Fwp-content%2Fuploads%2F2019%2F12%2FBarry_Hitmonlee-1180x664.png&fhttps://static.wikia.nocookie.net/megamitensei/images/0/09/Persona_5_Royal_Takuto.png/revision/latest?cb=20230705025434=1&nofb=1"),
         )
     }
 }
